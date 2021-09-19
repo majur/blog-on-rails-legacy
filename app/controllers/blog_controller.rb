@@ -18,6 +18,11 @@ class BlogController < ApplicationController
 
   def posts_list
     render 'posts_list'
+    # @posts = @posts.paginate(page: params[:page])
+  end
+
+  def posts
+    render 'post'
   end
 
 end

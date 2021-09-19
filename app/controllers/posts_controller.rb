@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
@@ -17,6 +17,10 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+  end
+
+  def post_paginate
+    @posts = Post.paginate(:per_page => 15, :page => params[:page], :order => 'created_at DESC')
   end
 
   # POST /posts or /posts.json
