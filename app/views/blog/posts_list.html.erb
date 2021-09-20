@@ -1,7 +1,7 @@
 <h1>Posts list</h1>
 
 <div>
-  <%= render 'follow_form' if logged_in? %>
+  <%= render 'dashboard' if logged_in? %>
   <% if Post.any? %>
     <h3>posts (<%= Post.count %>)</h3>
     <ol>
