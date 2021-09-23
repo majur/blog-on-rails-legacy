@@ -1,0 +1,17 @@
+<div>
+  <% Post.all.each do |post| %>
+    <h2>
+      <%= post.title %>
+    </h2>
+    <p>
+      <%= post.created_at %>   
+    </p>
+    <p>
+      <%= post.sub_title %>
+    </p>
+    <p>
+      <%= link_to 'Show', post %>  
+    </p>
+    <hr class="solid">
+  <% end %>
+</div>

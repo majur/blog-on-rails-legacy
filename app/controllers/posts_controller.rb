@@ -8,6 +8,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post = Post.friendly.find(params[:id])
+
+    # If an old id or a numeric id was used to find the record, then
+    # the request path will not match the post_path, and we should do
+    # a 301 redirect that uses the current friendly id.
+    if request.path != post_path(@post)
+      return redirect_to @post, :status => :moved_permanently
+    end
   end
 
   # GET /posts/new
@@ -17,6 +25,10 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+  end
+
+  def post_paginate
+    @posts = Post.paginate(:per_page => 15, :page => params[:page], :order => 'created_at DESC')
   end
 
   # POST /posts or /posts.json
@@ -59,11 +71,11 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params.require(:post).permit(:title, :sub_title, :content, :user_id)
     end
 end
