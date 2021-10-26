@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def post_paginate
-    @posts = Post.paginate(:per_page => 15, :page => params[:page], :order => 'created_at DESC')
+    @posts = Post.paginate(:per_page => 3, :page => params[:page], :order => 'created_at DESC')
   end
 
   # POST /posts or /posts.json
