@@ -1,13 +1,12 @@
-<h1>Posts list</h1>
-
 <div>
+  <h1>Posts list</h1>
   <%= render 'dashboard' if logged_in? %>
   <% if Post.any? %>
     <h3>posts (<%= Post.count %>)</h3>
-    <ol>
+    <div>
       <%= render 'post' %>
-    </ol>
-    <%# <%= will_paginate @posts %> 
+    </div>
+    <%# <%= will_paginate @post_paginator %>
   <% else %>
     <h3>No posts</h3>
   <% end %>

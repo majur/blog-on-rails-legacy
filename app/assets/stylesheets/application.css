@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+ .card-overview {
+  max-width: 900px;
+}
+
+@media only screen and (max-width: 950px) {
+  /* For mobile phones: */
+  .card-overview {
+    max-width: 100%;
+  }
+}
+
+.card-overview small {
+  color: rgb(var(--sl-color-neutral-500));
+}
+
+.card-overview [slot="footer"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+}
