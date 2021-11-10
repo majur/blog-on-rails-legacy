@@ -1,20 +1,5 @@
 <header>
   <div>
-    <%= debug(params) if Rails.env.development? %>
-    <h1 style="text-align: center;"><%= link_to "Blog on Rails", root_path %></h1>
-    <nav>
-      <ul style="text-align: center;">
-        <% if logged_in? %>
-          <sl-button-group>
-            <%= link_to "<sl-button>Users</sl-button>".html_safe, users_path %>
-            <%= link_to "<sl-button>Profile</sl-button>".html_safe, current_user %>
-            <%= link_to "<sl-button>Posts</sl-button>".html_safe, posts_path %>
-            <%= link_to "<sl-button>Pages</sl-button>".html_safe, pages_path %>
-            <%= link_to "<sl-button>Log out</sl-button>".html_safe, logout_path, method: :delete %>
-          </sl-button-group>
-        <% else %>
-        <% end %>
-      </ul>
-    </nav>
+    <%= render 'layouts/menu' %>
   </div>
 </header>

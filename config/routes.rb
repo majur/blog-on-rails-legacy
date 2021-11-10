@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get    'menu/index'
   get    '/login',   to: 'sessions#new'
   post   '/signup',  to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
