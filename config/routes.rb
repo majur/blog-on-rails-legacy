@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  get    '/login',   to: 'sessions#new'
-  post   '/signup',  to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
-  delete '/users',   to: 'users#destroy'
-  get    '/logout',  to: 'sessions#new'
-  get    '/signup',  to: 'users#new'
-  # get    '/posts/:title', to: 'posts#show' -> Snazim sa spravit to, aby v url bol nazov clanku a nie jeho id
-  # get    '/',        to: 'posts#index'
-  # get    '/',        to: 'blog#blog'
+  get     '/login',   to: 'sessions#new'
+  post    '/signup',  to: 'sessions#create'
+  delete  '/logout',  to: 'sessions#destroy'
+  delete  '/users',   to: 'users#destroy'
+  get     '/logout',  to: 'sessions#new'
+  get     '/signup',  to: 'users#new'
   resources :posts
   resources :users
   resources :pages

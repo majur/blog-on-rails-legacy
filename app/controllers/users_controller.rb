@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   def admin_creation
     if User.count != 0
       login
-    else 
+    else
       new
     end
   end
@@ -72,9 +72,6 @@ class UsersController < ApplicationController
   def signup
     render 'signup'
   end
-
-  
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

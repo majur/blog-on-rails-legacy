@@ -3,7 +3,7 @@
     <nav>
       <a style="text-align: left;"><%= link_to "Blog on Rails2", root_path%></a>
       <% Page.all.where('pages.active = ?', true).order(sort: :asc).each do |page| %>
-        <a><%= page.title %></a>
+        <%= link_to page.title, page %>
       <% end %>
       <ul style="text-align: center;">
         <% if logged_in? %>
