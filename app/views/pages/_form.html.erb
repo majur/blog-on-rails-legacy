@@ -17,6 +17,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :sort %>
+    <%= form.number_field :sort, in: 1.0..20.0, step: 1.0 %>
+  </div>
+
+  <div class="checkbox">
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div class="field">
     <%= form.label :content %>
     <%= form.rich_text_area :content %>
   </div>
