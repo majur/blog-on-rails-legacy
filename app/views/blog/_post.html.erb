@@ -1,44 +1,5 @@
-<div style="text-align: center;">
-  <% Post.all.each do |post| %>
-    <br>
-    <br>
-    <sl-card class="card-overview", style="width: 850px;">
-    <div slot="header">
-    <h1 style= "font-size: 3.6em; text-align: center" link_to, post >
-      <%= post.title %>
-    </h2>
-    <p>
-      <%= post.created_at %>
-    </p>
-    </div>
-    <p style="float: left; text-align: left; position: relative; left: -0%; font-size: 1.4rem; line-height: 1.3;">
-      <%= post.sub_title %>
-    </p>
-    <%= link_to "<sl-button>Read more</sl-button>".html_safe, post %>
-    </sl-card>
-  <% end %>
-</div>
-
-<style>
-  .card-overview {
-    max-width: 850px;
-  }
-
-  @media only screen and (max-width: 850px) {
-    /* For mobile phones: */
-    .card-overview {
-      max-width: 100%;
-    }
-  }
-
-  .card-overview small {
-    color: rgb(var(--sl-color-danger-100));
-  }
-
-  .card-overview [slot="footer"] {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-</style>
+<% Post.all.each do |post| %>
+<pre><p style="text-align: center"><%= post.created_at %></p><h1 style="line-height: 0.3;" link_to, post ><%= post.title %></h1>
+<div style="text-align: justify"><%= post.sub_title %></div>
+<div style="text-align: center"><%= button_to "Read more", post, :method => :get %></div></pre>
+<% end %>
