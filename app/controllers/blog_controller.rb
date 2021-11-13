@@ -3,7 +3,7 @@ class BlogController < ApplicationController
   def blog
     if User.count != 0
       list
-    else 
+    else
       new
     end
   end
@@ -21,7 +21,4 @@ class BlogController < ApplicationController
     @posts_list = Post.all
     # @posts = @posts.paginate(page: params[:page])
   end
-  
-  
-
 end
