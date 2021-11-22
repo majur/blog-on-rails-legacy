@@ -1,15 +1,26 @@
 <p id="notice"><%= notice %></p>
-<div>
-  <h1>
-    <%= @page.title %>
-  </h1>
+<% if is_blog = true %>
+  <div>
+    <h1>
+      <%= @page.title %>
+    </h1>
 
-  <p>
-    <%= @page.content %>
-  </p>
-</div>
-<% if logged_in? %>
-  <%= link_to 'Edit', edit_page_path(@page) %> |
-  <%= link_to 'Back', pages_path %>
+    <p>
+      <%= @page.content %>
+    </p>
+  </div>
+
+  <% if @page.posts? %>
+    <%= render :partial => 'blog/post', :object => @blog %>
+  <% else %>
+  <% end %>
+
+  <% if logged_in? %>
+    <%= link_to 'Edit', edit_page_path(@page) %> |
+    <%= link_to 'Back', pages_path %>
+  <% else %>
+  <% end %>
+
 <% else %>
+<%#  TODO: redirect to 404 %>
 <% end %>

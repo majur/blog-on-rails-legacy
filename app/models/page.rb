@@ -1,6 +1,5 @@
 class Page < ApplicationRecord
   has_rich_text :content
-  validates :content, presence: true
   extend FriendlyId
   friendly_id :title, use: :slugged, :use => :history
 

@@ -68,6 +68,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def is_blog?
+    pages.active?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
@@ -76,6 +80,6 @@ class PagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.require(:page).permit(:title, :sort, :content, :active)
+      params.require(:page).permit(:title, :sort, :content, :active, :posts)
     end
 end
