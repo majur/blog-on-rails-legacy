@@ -8,8 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 // import '../stylesheets/application.scss'
-import { setBasePath, SlAlert, SlAnimation, SlButton, defineCustomElements, setAssetPath } from '@shoelace-style/shoelace'
-import '@shoelace-style/shoelace/dist/components/button/button.js';
 
 Rails.start()
 Turbolinks.start()
