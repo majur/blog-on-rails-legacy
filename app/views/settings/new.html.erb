@@ -1,0 +1,6 @@
+<% if logged_in? %>
+  <h1>New Setting</h1>
+  <%= render 'form', setting: @setting %>
+  <%= link_to 'Back', settings_path %>
+<% else %>
+<% end %>

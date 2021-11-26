@@ -5,15 +5,5 @@
       <% Page.all.where('pages.active = ?', true).order(sort: :asc).each do |page| %>
         <%= link_to page.title, page %>
       <% end %>
-        <div>
-        <% if logged_in? %>
-            <%= link_to "Users", users_path %>
-            <%= link_to "Profile", current_user %>
-            <%= link_to "Posts", posts_path %>
-            <%= link_to "Pages", pages_path %>
-            <%= link_to "Log out", logout_path, method: :delete %>
-        <% else %>
-        <% end %>
-        </div>
     </nav>
 </div>

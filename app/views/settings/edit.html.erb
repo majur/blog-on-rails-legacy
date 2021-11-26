@@ -1,0 +1,9 @@
+<% if logged_in? %>
+<h1>Editing Settings</h1>
+<%= render 'form', setting: @setting %>
+
+<%= link_to 'Show', @setting %> |
+<%= link_to 'Back', settings_path %>
+<% else %>
+<%= render 'Show' %>
+<% end %>
