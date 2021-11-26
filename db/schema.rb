@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_204938) do
+ActiveRecord::Schema.define(version: 2021_11_22_085735) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -85,6 +85,13 @@ ActiveRecord::Schema.define(version: 2021_11_13_204938) do
     t.boolean "published"
     t.date "date"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "blog_title"
+    t.string "blog_sub_title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

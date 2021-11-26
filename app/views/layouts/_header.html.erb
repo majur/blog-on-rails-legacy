@@ -1,5 +1,6 @@
 <header>
-  <h1>Blog on Rails</h1>
-  <div>Open source blog platform build with Ruby on Rails</div>
+  <%= render 'layouts/admin_menu' %>
+  <h1><%= Setting.first.blog_title %></h1>
+  <div><%= Setting.first.blog_sub_title %></div>
   <%= render 'layouts/menu' %>
 </header>

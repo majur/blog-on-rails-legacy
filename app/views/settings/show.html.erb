@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <h1>
+    <%= @setting.blog_title %>
+  </h1>
+
+  <div>
+    <%= @setting.blog_sub_title %>
+  </div>
+
+</div>
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_setting_path(@setting) %> |
+  <%= link_to 'Back', settings_path %>
+<% else %>
+<% end %>

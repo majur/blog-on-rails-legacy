@@ -1,0 +1,16 @@
+<%= form_with(model: setting) do |form| %>
+
+  <div>
+    <%= form.label :blog_title %>
+    <%= form.text_area :blog_title %>
+  </div>
+
+  <div>
+    <%= form.label :blog_sub_title %>
+    <%= form.text_area :blog_sub_title %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
