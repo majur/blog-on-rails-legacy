@@ -13,7 +13,7 @@
     </thead>
 
     <tbody>
-      <% @settings.order(date: :desc).each do |setting| %>
+      <% @settings.each do |setting| %>
         <tr>
           <td><%= setting.blog_title %></td>
           <td><%= setting.blog_sub_title %></td>
