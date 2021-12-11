@@ -2,26 +2,29 @@
 <% if logged_in? %>
 <h1>Settings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Blog title</th>
-      <th>Blog sub title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @settings.order(date: :desc).each do |setting| %>
+<% if Setting.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= setting.blog_title %></td>
-        <td><%= setting.blog_sub_title %></td>
-        <td><%= link_to 'Edit', edit_setting_path(setting) %></td>
+        <th>Blog title</th>
+        <th>Blog sub title</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @settings.each do |setting| %>
+        <tr>
+          <td><%= setting.blog_title %></td>
+          <td><%= setting.blog_sub_title %></td>
+          <td><%= link_to 'Edit', edit_setting_path(setting) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <%= link_to 'Setup blog', new_setting_path %>
+<% end %>
 <br>
 
 <% else %>

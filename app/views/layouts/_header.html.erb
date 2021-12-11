@@ -1,6 +1,11 @@
 <header>
   <%= render 'layouts/admin_menu' %>
-  <h1><%= Setting.first.blog_title %></h1>
-  <div><%= Setting.first.blog_sub_title %></div>
+  <% if Setting.any? %>
+    <h1><%= Setting.first.blog_title %></h1>
+    <div><%= Setting.first.blog_sub_title %></div>
+  <% else %>
+    <h1>Your new blog</h1>
+    <div>You can modify this in settings</div>
+  <% end %>
   <%= render 'layouts/menu' %>
 </header>
