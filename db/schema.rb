@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_085735) do
+ActiveRecord::Schema.define(version: 2021_12_11_122527) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -92,6 +92,10 @@ ActiveRecord::Schema.define(version: 2021_11_22_085735) do
     t.string "blog_sub_title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "root_page_name"
+    t.text "root_page_content"
+    t.boolean "root_page_posts"
+    t.boolean "root_page_menu"
   end
 
   create_table "users", force: :cascade do |t|

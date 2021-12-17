@@ -1,4 +1,5 @@
 class Setting < ApplicationRecord
+  has_rich_text :root_page_content
   # validate :only_one
 
   # private

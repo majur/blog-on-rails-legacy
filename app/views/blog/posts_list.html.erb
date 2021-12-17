@@ -1,12 +1,10 @@
-<div>
-  <h1>Posts</h1>
-  <%= render 'dashboard' if logged_in? %>
-  <% if Post.any? %>
-    <div>
-      <%= render 'post' %>
-    </div>
-    <%# <%= will_paginate @posts_list %>
-  <% else %>
-    <h3>No posts</h3>
-  <% end %>
-</div>
+
+<h1><%= Setting.first.root_page_name %></h1>
+<p>
+  <%= Setting.first.root_page_content %>
+</p>
+
+<% if Setting.first.root_page_posts? %>
+  <%= render :partial => 'blog/post', :object => @blog %>
+<% else %>
+<% end %>
