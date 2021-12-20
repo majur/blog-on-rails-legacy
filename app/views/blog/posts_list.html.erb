@@ -1,8 +1,11 @@
-<h1><%= Setting.first.root_page_name %></h1>
-<p>
-  <%= Setting.first.root_page_content %>
-</p>
-<% if Setting.first.root_page_posts? %>
-  <%= render :partial => 'blog/post', :object => @blog %>
+<% if Setting.first.root_page_name.present? || Setting.first.root_page_menu? %>
+  <h1><%= Setting.first.root_page_name %></h1>
+  <p>
+    <%= Setting.first.root_page_content %>
+  </p>
+  <% if Setting.first.root_page_posts? %>
+    <%= render :partial => 'blog/post', :object => @blog %>
+  <% else %>
+  <% end %>
 <% else %>
 <% end %>
