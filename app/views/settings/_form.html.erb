@@ -11,6 +11,26 @@
   </div>
 
   <div>
+    <%= form.label :root_page_menu %>
+    <%= form.check_box :root_page_menu %>
+  </div>
+
+  <div>
+    <%= form.label :root_page_posts %>
+    <%= form.check_box :root_page_posts %>
+  </div>
+
+  <div>
+    <%= form.label :root_page_name %>
+    <%= form.text_area :root_page_name %>
+  </div>
+
+  <div>
+    <%= form.label :root_page_content %>
+    <%= form.rich_text_area :root_page_content %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

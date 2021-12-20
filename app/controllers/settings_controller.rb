@@ -65,6 +65,7 @@ class SettingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def setting_params
-      params.require(:setting).permit(:blog_title, :blog_sub_title)
+      params.require(:setting).permit(:blog_title, :blog_sub_title, :root_page_name,
+                                      :root_page_content, :root_page_posts, :root_page_menu)
     end
 end
