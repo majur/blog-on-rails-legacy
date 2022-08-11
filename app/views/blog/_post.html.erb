@@ -1,5 +1,5 @@
 <% Post.order(date: :desc).where(published: true).each do |post| %>
-<pre><p style="text-align: center"><%= post.date.strftime("%B %e, %Y") %></p><h1 style="line-height: 0.3;" link_to, post ><%= post.title %></h1>
+<pre><p style="text-align: center"><%= post.date.strftime("%B %e, %Y") %></p><h1 style="line-height: 1.0;" link_to, post ><%= post.title %></h1>
 <div style="text-align: justify"><%= post.sub_title %></div>
 <div style="text-align: center"><%= button_to "Read more", post, :method => :get %></div></pre>
 <% end %>
